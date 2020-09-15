@@ -1,0 +1,79 @@
+
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width">
+	</head>
+		
+		<body>
+			<image id='image' height="500"/>
+			<br>
+			<video controls name="media" id='video'/>
+			</video>
+			
+			<div>
+				<br>
+			</div>
+			
+			<div id="slide_num">
+				Click "next" to start
+			</div>
+			
+			<div>
+				<br>
+				<button onclick="file.back()">back</button>
+				<button onclick="file.next()">next</button>			
+			</div>
+		
+		</body>
+		
+	<script>
+		
+		var video = document.getElementById('video');
+		var image = document.getElementById('image');
+		var slide_num = document.getElementById('slide_num');
+		
+		video.playbackRate = 2;
+		
+		var file = {
+		
+			i: 0,
+			
+			changeSource: function () {
+				
+				slide_num.innerHTML = "Audio file " + file.i ;  // add total slide number
+				
+				var vid_filename = "ppt/media/media"+file.i+".m4a";
+				var im_filename = "slides/Slide"+file.i+".png";
+				
+				video.setAttribute('src', vid_filename); 
+				image.setAttribute('src', im_filename);
+
+				video.load();
+				video.play();
+				video.playbackRate = 2;
+			},
+			
+			next: function () {
+				file.i++;
+				file.changeSource();
+			},
+			
+			back: function () {
+				file.i--;
+				file.changeSource();
+			}
+		}
+
+	</script>
+
+</html>
+
+
+		<!-- const glob = require('glob');
+		const dir = './';
+		
+		glob("**/*.m4a", function (err, files) {
+		
+			var total_slides = files.length()
+		
+		}) -->

@@ -1,0 +1,2 @@
+# pptx-audio-speed-up
+With online school, lessons that are posted as PowerPoint presentations with audio voice-overs are paced too slowly for me, and jumping back and forth to repeat or skip over content is difficult with the PPTX UI. Converting the PPTX to a video file (and getting playback control in another software) would quickly consume my limited hardware memory, so I wrote a script to open the PPTX in my browser and give me full audio playback control.
